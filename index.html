@@ -4,8 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rayz Pay</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+
+  <title>Rayz Pay</title>
 
 </head>
 
@@ -14,12 +17,13 @@
   <header class="header">
 
     <div class="profile">
-      <img src="images/user.png" alt="User" />
-      <div>
-        <div class="profile-h2">
-          <h2>Rayz Pay</h2>
-          <p>Let's save your money!</p>
-        </div>
+      <a href="profile.html">
+        <img src="images/user.png" alt="User" />
+      </a>
+
+      <div class="profile-h2">
+        <h2>Rayz Pay</h2>
+        <p>Let's save your money!</p>
       </div>
 
       <div class="scanner">
@@ -27,140 +31,269 @@
       </div>
     </div>
 
-
   </header>
 
   <!-- WALLET INFO -->
   <div class="wallet-info">
+    <!-- Wallet Balances -->
     <div class="wallet-balances">
-      <div><strong>eWallet:</strong> ₹0</div>
-      <div><strong>Rayz Coin:</strong> 0</div>
-      <div><strong>rWallet:</strong> ₹0</div>
+      <div class="wallet-box">
+        <div class="label">eWallet</div>
+        <div class="amount">₹10,00,000</div>
+      </div>
+      <div class="wallet-box">
+        <div class="label">Rayz Coin</div>
+        <div class="amount">500</div>
+      </div>
+      <div class="wallet-box">
+        <div class="label">rWallet</div>
+        <div class="amount">₹5,00,000</div>
+      </div>
     </div>
 
+    <!-- Wallet Actions -->
     <div class="wallet-actions">
       <div class="action">
-        <i class="icon">🔖</i>
-        <span>Recharge</span>
+        <i class="fa-solid fa-money-bill-transfer icon"></i>
+        <span class="action-label">Transfer</span>
       </div>
       <div class="action">
-        <i class="icon">➕</i>
-        <span>Top up</span>
+        <i class="fa-solid fa-wallet icon"></i>
+        <span class="action-label">Top Up</span>
       </div>
       <div class="action">
-        <i class="icon">💳</i>
-        <span>Card</span>
+        <i class="fa-solid fa-credit-card icon"></i>
+        <span class="action-label">Card</span>
       </div>
       <div class="action">
-        <i class="icon">🔍</i>
-        <span>Loan EMI</span>
-      </div>
-    </div>
-  </div>
-
-  </section>
-
-  <!-- RECHARGE & BILLS -->
-  <section class="section section-box">
-    <h3>Recharge & Bills</h3>
-    <div class="icon-grid">
-      <div class="icon-item"><img src="images/mobile.png" alt="Mobile" />
-        <div>Mobile</div>
-      </div>
-      <div class="icon-item img"><img src="images/wifi-router.png" alt="BroadBrand" />
-        <div>Broad<br>Brand</div>
-      </div>
-      <div class="icon-item"><img src="images/prepaid.png" alt="PostPaid" />
-        <div>PostPaid</div>
-      </div>
-      <div class="icon-item"><img src="images/online.png" alt="DTH" />
-        <div>DTH</div>
-      </div>
-      <div class="icon-item"><img src="images/cable-tv.png" alt="Cable Tv" />
-        <div>Cable Tv</div>
-      </div>
-      <div class="icon-item"><img src="images/google-play.png" alt="Google Play" />
-        <div>Google<br>Play</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="section section-box">
-    <h3>Services</h3>
-    <div class="icon-grid">
-      <div class="icon-item"><img src="images/electrical-energy.png" alt="Electricity" />
-        <div>Electricity</div>
-      </div>
-      <div class="icon-item"><img src="images/quality.png" alt="Water" />
-        <div>Water</div>
-      </div>
-      <div class="icon-item"><img src="images/toll.png" alt="FASTag" />
-        <div>FASTag</div>
-      </div>
-      <div class="icon-item"><img src="images/gas.png" alt="LPG" />
-        <div>LPG</div>
-      </div>
-      <div class="icon-item"><img src="images/insurance.png" alt="Insurance" />
-        <div>Insurance</div>
-      </div>
-      <div class="icon-item"><img src="images/gas (1).png" alt="Gas" />
-        <div>Gas</div>
-      </div>
-      <div class="icon-item"><img src="images/rent.png" alt="Loan" />
-        <div>Loan</div>
-      </div>
-      <div class="icon-item"><img src="images/play.png" alt="PlayCode" />
-        <div>PlayCode</div>
-      </div>
-      <div class="icon-item"><img src="images/structure.png" alt="Govt Of Arunachal Pardesh<" />
-        <div>Govt Of Arunachal Pardesh</div>
-
-      </div>
-  </section>
-  <section class="section section-box-ecom">
-    <!-- E-com -->
-    <h3>E-commerce</h3>
-    <div class="icon-grid">
-      <div class="icon-item"><img src="images/shop (1).png" alt="shop" />
-        <div>shop</div>
-      </div>
-      <div class="icon-item"><img src="images/wordpress.png" alt="WordPress" />
-        <div>WordPress</div>
-      </div>
-      <div class="icon-item"><img src="images/social (1).png" alt="FASTag" />
-        <div>Shopify</div>
-
-      </div>
-
-
-
-  </section>
-  <div class="bottom-nav">
-    <div class="nav-item">
-      <img src="images/home.png" alt="Home" />
-      <div>Home</div>
-    </div>
-    <div class="nav-item">
-      <img src="images/history.png" alt="History" />
-      <div>History</div>
-    </div>
-
-    <div class="nav-scan">
-      <div class="scan-button">
-        <img src="images/scanner.png" alt="Scan" />
+        <i class="fa-solid fa-gift icon"></i>
+        <span class="action-label">Refer & Earn</span>
       </div>
     </div>
 
-    <div class="nav-item">
-      <img src="images/gift.png" alt="Rewards" />
-      <div>Rewards</div>
-    </div>
-    <div class="nav-item">
-      <img src="images/user (1).png" alt="profile" />
-      <div>profile</div>
-    </div>
-  </div>
+
+    </section>
+
+    <!-- RECHARGE & BILLS -->
+    <section class="section section-box">
+      <h3>Recharge & Bills</h3>
+      <div class="icon-grid">
+        <div class="icon-item">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 2H17C18.1 2 19 2.9 19 4V20C19 21.1 18.1 22 17 22H7C5.9 22 5 21.1 5 20V4C5 2.9 5.9 2 7 2Z"
+              stroke="#4A90E2" stroke-width="2" />
+            <circle cx="12" cy="18" r="1" fill="#4A90E2" />
+          </svg>
+          <div class="icon-label">Mobile</div>
+        </div>
+        <div class="icon-item">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 12C2 7.03 6.03 3 11 3C15.97 3 20 7.03 20 12" stroke="#4A90E2" stroke-width="2"
+              stroke-linecap="round" />
+            <path d="M5 12C5 8.686 7.686 6 11 6C14.314 6 17 8.686 17 12" stroke="#4A90E2" stroke-width="2"
+              stroke-linecap="round" />
+            <path d="M8 12C8 10.343 9.343 9 11 9C12.657 9 14 10.343 14 12" stroke="#4A90E2" stroke-width="2"
+              stroke-linecap="round" />
+            <circle cx="11" cy="16" r="1.5" fill="#4A90E2" />
+          </svg>
+          <div class="icon-label">Broadband</div>
+        </div>
+        <div class="icon-item">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 2H14L20 8V20C20 21.1 19.1 22 18 22H6C4.9 22 4 21.1 4 20V4C4 2.9 4.9 2 6 2Z" stroke="#4A90E2"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M9 13L11 15L15 11" stroke="#4A90E2" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          <div class="icon-label">PostPaid</div>
+        </div>
+        <div class="icon-item">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M5.5 16.5C9.09 20.09 14.91 20.09 18.5 16.5C22.09 12.91 22.09 7.09 18.5 3.5L12 10M12 10L14.5 12.5M12 10L11 13M4 20L11 13"
+              stroke="#4A90E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="4" cy="20" r="1.5" fill="#4A90E2" />
+          </svg>
+          <div class="icon-label">DTH</div>
+        </div>
+        <div class="icon-item">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="6" width="18" height="13" rx="2" ry="2" stroke="#4A90E2" stroke-width="2" />
+            <path d="M8 21H16" stroke="#4A90E2" stroke-width="2" stroke-linecap="round" />
+            <path d="M9 3L12 6L15 3" stroke="#4A90E2" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <div class="icon-label">Cable TV</div>
+        </div>
+        <div class="icon-item">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 2L17.5 12L3 22V2Z" fill="#4A90E2" />
+            <path d="M3 2L17.5 12L3 22V2Z" stroke="#4A90E2" stroke-width="1.5" />
+            <path d="M17.5 12L20.5 10.5C21.5 10 21.5 9 20.5 8.5L17.5 7" stroke="#4A90E2" stroke-width="1.5" />
+            <path d="M17.5 12L20.5 13.5C21.5 14 21.5 15 20.5 15.5L17.5 17" stroke="#4A90E2" stroke-width="1.5" />
+          </svg>
+          <div class="icon-label">Google Play</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SERVICES -->
+    <section class="section section-box">
+      <h3>Services</h3>
+      <div class="icon-grid">
+        <div class="icon-item"><svg width="36" height="36" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 2L6 13H12L11 22L18 11H12L13 2Z" fill="#4A90E2" stroke="#4A90E2" stroke-width="1.5"
+              stroke-linejoin="round" />
+          </svg>
+          <div>Electricity</div>
+        </div>
+        <div class="icon-item"><svg width="36" height="36" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C12 2 6 9 6 14C6 17.866 9.13401 21 13 21C16.866 21 20 17.866 20 14C20 9 12 2 12 2Z"
+              stroke="#4A90E2" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <div>Water</div>
+        </div>
+        <div class="icon-item"><svg width="36" height="36" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 11H21M4 7H20M6 15H18" stroke="#4A90E2" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <rect x="9" y="3" width="6" height="4" rx="1" stroke="#4A90E2" stroke-width="1.5" />
+            <rect x="7" y="15" width="10" height="6" rx="1" stroke="#4A90E2" stroke-width="1.5" />
+          </svg>
+          <div>FASTag</div>
+        </div>
+        <div class="icon-item"> <svg width="36" height="36" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 2H16V4H8V2Z" stroke="#4A90E2" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <rect x="7" y="4" width="10" height="16" rx="2" stroke="#4A90E2" stroke-width="1.5" />
+            <path d="M9 12H15" stroke="#4A90E2" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+          <div>LPG</div>
+        </div>
+        <div class="icon-item"><svg width="36" height="36" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L4 5V11C4 16 7.5 20 12 22C16.5 20 20 16 20 11V5L12 2Z" stroke="#4A90E2" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M9.5 12.5C9.5 11.12 10.62 10 12 10C13.38 10 14.5 11.12 14.5 12.5C14.5 13.88 13 15 12 16C11 15 9.5 13.88 9.5 12.5Z"
+              stroke="#4A90E2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <div>Insurance</div>
+        </div>
+        <div class="icon-item"> <svg width="36" height="36" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C12 2 6 7 6 13C6 17.4183 9.58172 21 14 21C17.866 21 20 18.2091 20 15C20 9 12 2 12 2Z"
+              stroke="#4A90E2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M13 13C13 11.8954 12.1046 11 11 11C10.4477 11 10 11.4477 10 12C10 13.1046 10.8954 14 12 14C12.5523 14 13 13.5523 13 13Z"
+              fill="#4A90E2" />
+          </svg>
+          <div>Gas</div>
+        </div>
+        <div class="icon-item"> <svg width="36" height="36" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 2H14L18 6V20C18 21.1046 17.1046 22 16 22H6C4.89543 22 4 21.1046 4 20V4C4 2.89543 4.89543 2 6 2Z"
+              stroke="#4A90E2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M14 2V6H18" stroke="#4A90E2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M9 11H13M9 14H13M9 17H11" stroke="#4A90E2" stroke-width="1.5" stroke-linecap="round" />
+            <text x="8" y="10" font-size="4" fill="#4A90E2" font-family="Arial, sans-serif">₹</text>
+          </svg>
+          <div>Loan</div>
+        </div>
+        <div class="icon-item"><svg width="36" height="36" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 7L5 12L9 17" stroke="#4A90E2" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M15 7L19 12L15 17" stroke="#4A90E2" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M11 9L14 12L11 15V9Z" fill="#4A90E2" />
+          </svg>
+          <div>PlayCode</div>
+        </div>
+        <div class="icon-item"> <svg width="36" height="36" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L15 6H9L12 2Z" stroke="#4A90E2" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <rect x="4" y="10" width="16" height="10" rx="2" stroke="#4A90E2" stroke-width="1.6" />
+            <path d="M6 10V20M9 10V20M12 10V20M15 10V20" stroke="#4A90E2" stroke-width="1.6" />
+            <path d="M2 20H22" stroke="#4A90E2" stroke-width="1.2" />
+          </svg>
+          <div>Govt Of Aruna...</div>
+
+        </div>
+    </section>
+    <section class="section section-box-ecom">
+      <!-- E-com -->
+      <h3>E-commerce</h3>
+      <div class="icon-grid">
+        <div class="icon-item"><svg width="36" height="36" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 7L5 3H19L21 7" stroke="#4A90E2" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path
+              d="M3 7H21V9.5C21 11 20 13 17.5 13C15 13 14 11 14 9.5C14 11 13 13 10.5 13C8 13 7 11 7 9.5C7 11 6 13 3.5 13C1 13 1 11 1 9.5V7Z"
+              fill="none" stroke="#4A90E2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M4 13V20H10V16H14V20H20V13" stroke="#4A90E2" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          <div>shop</div>
+        </div>
+        <div class="icon-item"><svg width="36" height="36" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#4A90E2" stroke-width="1.8" />
+            <path d="M7 7L10 17L12 12L14 17L17 7" stroke="#4A90E2" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          <div>WordPress</div>
+        </div>
+        <div class="icon-item"> <svg width="36" height="36" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            Z
+            <path d="M5 7L7 21H17L19 7H5Z" stroke="#4A90E2" stroke-width="1.6" stroke-linejoin="round" fill="none" />
+
+            <path d="M9 7C9 5 10 3 12 3C14 3 15 5 15 7" stroke="#4A90E2" stroke-width="1.6" stroke-linecap="round" />
+            <path
+              d="M10 11C10 10 11 9.5 12 9.5C13.2 9.5 13 10.6 13 11C13 12 11 11.5 11 13C11 13.5 11.5 14.5 13 14.5C14 14.5 14.5 14 14.5 13.5"
+              stroke="#4A90E2" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+          <div>Shopify</div>
+
+        </div>
+
+
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+          <a class="nav-item active" href="index.html" style="color: var(--primary-color); font-weight: 600;">
+            <img src="images/home.png" alt="Home" />
+            <div class="nav-label">Home</div>
+          </a>
+
+          <div class="nav-item">
+            <img src="images/history.png" alt="History" />
+            <div class="nav-label">History</div>
+          </div>
+
+          <!-- Central Scan Button -->
+          <div class="nav-scan">
+            <div class="scan-button">
+              <img src="images/scanner.png" alt="Scan" />
+            </div>
+          </div>
+
+          <div class="nav-item">
+            <img src="images/gift.png" alt="Rewards" />
+            <div class="nav-label">Rewards</div>
+          </div>
+          <a class="nav-item" href="profile.html">
+            <img src="images/user (1).png" alt="Profile" />
+            <div class="nav-label">Profile</div>
+          </a>
+
+
 </body>
 
 </html>
