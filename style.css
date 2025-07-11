@@ -20,6 +20,7 @@ body {
     background: var(--bg-dark);
     color: var(--text-light);
     padding-bottom: 90px;
+
 }
 
 .scanner {
@@ -33,6 +34,7 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     transition: transform 0.3s;
+
 }
 
 .scanner img {
@@ -55,6 +57,12 @@ body {
     border-bottom-right-radius: 20px;
     position: relative;
     font-size: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
 }
 
 @keyframes gradientShift {
@@ -76,6 +84,7 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 10px;
+
 }
 
 .profile-h2 {
@@ -95,12 +104,13 @@ body {
     border-radius: 15px;
     padding: 20px;
     margin: 20px;
+
     border: 1.5px solid #3e3e3e;
     box-shadow: 0 4px 10px rgba(0, 0, 0, .5);
     backdrop-filter: blur(10px);
 }
 
-.wallet-balances,
+
 .wallet-actions {
     display: flex;
     justify-content: space-between;
@@ -108,9 +118,24 @@ body {
     gap: 10px;
     border: 1.5px solid #3e3e3e;
     border-radius: 5px;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
 }
+
+.wallet-balances {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    border: 1.5px solid #3e3e3e;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 60px;
+    
+}
+
 
 .wallet-actions div,
 .wallet-balances div {
