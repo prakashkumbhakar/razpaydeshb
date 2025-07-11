@@ -215,6 +215,9 @@ body {
     color: var(--primary-color);
 }
 
+.section-box{
+    margin: 20px auto 10px auto;  
+}
 .section-box,
 .section-box-ecom {
     background: var(--card-bg);
@@ -223,6 +226,8 @@ body {
     margin: 20px auto;
     max-width: 900px;
     box-shadow: var(--shadow);
+     margin-bottom: 10px;
+      margin-top: 0px;
 }
 
 .section-box h3,
@@ -359,41 +364,7 @@ a {
     height: 28px;
 }
 
-@media (min-width: 403px) {
-    .wallet-info {
-        max-width: 800px;
-        margin: 100px auto 20px auto;
-    }
 
-    .wallet-balances {
-        justify-content: space-around;
-    }
-
-    .wallet-actions {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-
-    .section-box,
-    .section-box-ecom {
-        max-width: 1000px;
-        margin: 20px auto;
-    }
-
-    .icon-item {
-        width: 16%;
-    }
-
-    .scan-button {
-        width: 60px;
-        height: 60px;
-    }
-
-    .scan-button img {
-        width: 28px;
-        height: 28px;
-    }
-}
 
 /* Default (Desktop & Tablet) */
 .scan-button {
@@ -413,18 +384,8 @@ a {
     height: 28px;
 }
 
-/* Mobile-specific size */
-@media (max-width: 420px) {
-    .scan-button {
-        width: 48px;
-        height: 48px;
-    }
 
-    .scan-button img {
-        width: 22px;
-        height: 22px;
-    }
-}
+
 
 /* ----------  THEME (same as home)  ---------- */
 :root {
