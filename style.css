@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --purple-1: #5c2ded;
+    --purple-2: #6a1fe7;
+    --purple-3: #9d29ff;
+    --bg-dark: #121212;
+    --card-dark: #1e1e1e;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --text-light: #f0f0f0;
+    --text-muted: #ccc;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-light);
+    padding-bottom: 90px;
+}
+
+.scanner {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.scanner img {
+    width: 28px;
+    height: 28px;
+    filter: brightness(0) invert(1);
+}
+
+.scanner:hover {
+    transform: scale(1.1);
+}
+
+.header {
+    background: linear-gradient(45deg, var(--purple-1), var(--purple-2), var(--purple-3), var(--purple-2));
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+    color: #fff;
+    padding: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: relative;
+    font-size: 10px;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.profile-h2 {
+    padding-right: 200px;
+}
+
+.profile img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.wallet-info,
+.section-box,
+.section-box-ecom {
+    background: var(--card-dark);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px;
+    border: 1.5px solid #3e3e3e;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .5);
+    backdrop-filter: blur(10px);
+}
+
+.wallet-balances,
+.wallet-actions {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    border: 1.5px solid #3e3e3e;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.wallet-actions div,
+.wallet-balances div {
+    flex: 1;
+    min-width: 80px;
+    cursor: pointer;
+}
+
+.wallet-actions img {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px;
+    filter: brightness(0) invert(1);
+    transition: transform .3s;
+}
+
+.wallet-actions div:hover img {
+    transform: scale(1.25) rotate(5deg);
+}
+
+.icon-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.icon-item {
+    font-size: 11px;
+    width: 25%;
+    min-width: 70px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.icon-item img {
+    width: 50px;
+    height: 48px;
+    background-color: #121212;
+    border: 1.5px solid #3e3e3e;
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 5px;
+    transition: transform .3s;
+}
+
+.icon-item:hover img {
+    transform: scale(1.15) rotate(5deg);
+}
+
+.icon-item:hover div {
+    color: #fff;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: var(--card-dark);
+    border-top: 1px solid #333;
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0;
+    z-index: 1000;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-item {
+    text-align: center;
+    color: var(--text-muted);
+    flex: 1;
+    cursor: pointer;
+    transition: color .3s;
+}
+
+.nav-item img {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 3px;
+    filter: brightness(0) invert(1);
+    transition: transform .3s;
+}
+
+.nav-item:hover img {
+    transform: scale(1.3);
+}
+
+.nav-item:hover {
+    color: #fff;
+}
+
+.nav-scan {
+    position: relative;
+    top: -25px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.scan-button {
+    background: var(--purple-1);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(92, 45, 237, 0.5);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.scan-button img {
+    width: 28px;
+    height: 28px;
+    filter: brightness(0) invert(1);
+}
+
+.scan-button:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 480px) {
+    .icon-item {
+        width: 25%;
+    }
+
+    .scan-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .scan-button img {
+        width: 24px;
+        height: 24px;
+    }
+}
