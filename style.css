@@ -571,3 +571,80 @@ body {
 .nav-item.active img {
     filter: brightness(0) saturate(100%) invert(34%) sepia(95%) saturate(325%) hue-rotate(181deg) brightness(92%) contrast(89%);
 }
+@media (min-width: 395px) {
+  .icon-item {
+    width: 22%;
+    max-width: 110px;
+  }
+
+  .wallet-actions {
+    gap: 16px;
+    justify-content: space-evenly;
+  }
+
+  .wallet-actions .action {
+    min-width: 140px;
+    padding: 18px 12px;
+  }
+
+  .section-box,
+  .section-box-ecom,
+  .wallet-info,
+  .profile-card {
+    max-width: 720px;
+  }
+
+  .profile-actions {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .bottom-nav {
+    padding: 10px 0;
+  }
+
+  .header h2 {
+    font-size: 1.6rem;
+  }
+
+  .action-label,
+  .nav-label {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 350px) {
+  .icon-item {
+    width: 28%;
+    max-width: 100px;
+  }
+
+  .wallet-actions {
+    gap: 12px;
+    justify-content: space-between;
+  }
+
+  .wallet-actions .action {
+    min-width: 120px;
+    padding: 16px 10px;
+  }
+
+  .section-box,
+  .section-box-ecom,
+  .wallet-info,
+  .profile-card {
+    max-width: 640px;
+  }
+
+  .profile-actions {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .header h2 {
+    font-size: 1.5rem;
+  }
+
+  .action-label,
+  .nav-label {
+    font-size: 0.78rem;
+  }
+}
+
