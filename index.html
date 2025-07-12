@@ -292,7 +292,34 @@
             <img src="images/user (1).png" alt="Profile" />
             <div class="nav-label">Profile</div>
           </a>
+          <!-- ▼ Floating Chat Toggle Button ▼ -->
+          <button id="chat-toggle" aria-label="Open chat">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M2 2h20v14H6l-4 4V2z" />
+            </svg>
+          </button>
 
+          <!-- ▼ Chat Pop‑up ▼ -->
+          <section id="chat-popup" aria-hidden="true">
+            <div id="chat-header">
+              <span>Chat</span>
+              <button id="chat-close" aria-label="Close chat">&times;</button>
+            </div>
+
+            <div id="chat-messages"></div>
+
+            <form id="chat-form" autocomplete="off">
+              <input type="text" id="chat-input" placeholder="Type..." required />
+              <button type="submit" id="chat-send">Send</button>
+            </form>
+          </section>
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
 
 </body>
 
