@@ -1,82 +1,155 @@
- const toggleBtn   = document.getElementById('chat-toggle');
-    const popup       = document.getElementById('chat-popup');
-    const closeBtn    = document.getElementById('chat-close');
-    const form        = document.getElementById('chat-form');
-    const input       = document.getElementById('chat-input');
-    const messagesBox = document.getElementById('chat-messages');
+    // DOM elements
+    const toggleBtn = document.getElementById('chat-toggle');
+    const popup = document.getElementById('chat-popup');
+    const closeBtn = document.getElementById('chat-close');
+    const form = document.getElementById('chat-form');
+    const input = document.getElementById('chat-input');
+    const box = document.getElementById('chat-messages');
+    const sendBtn = document.getElementById('chat-send');
 
+    // Show/hide chat popup
     function toggleChat() {
-      const open = popup.classList.toggle('open');
-      popup.setAttribute('aria-hidden', (!open).toString());
-      if (open) input.focus();
+        const open = popup.classList.toggle('open');
+        popup.setAttribute('aria-hidden', (!open).toString());
+        if (open) {
+            input.focus();
+            // Add initial message if chat is empty
+            if (box.children.length === 0) {
+                setTimeout(() => {
+                    addMessage('Hello! I\'m Razpay support. How can I help with payments today?', 'bot');
+                }, 300);
+            }
+        }
     }
 
-    function addMessage(text, who = 'bot') {
-      const div = document.createElement('div');
-      div.className = 'message ' + who;
-      div.textContent = text;
-      messagesBox.appendChild(div);
-      messagesBox.scrollTop = messagesBox.scrollHeight;
+    // Add message to chat box
+    function addMessage(txt, who = 'bot') {
+        const div = document.createElement('div');
+        div.className = `message ${who}`;
+        div.textContent = txt;
+        box.appendChild(div);
+        box.scrollTop = box.scrollHeight;
     }
 
-    function getBotReply(message) {
-      const msg = message.toLowerCase();
-
-      if (msg.includes('hello') || msg.includes('hi') || msg.includes('namaste')) {
-        return "Hello! 👋 How can I help you?";
-      }
-      if (msg.includes('your name')) {
-        return "My name is RayzBot 🤖";
-      }
-      if (msg.includes('how are you')) {
-        return "I'm just code, but I'm doing great! 😊";
-      }
-      if (msg.includes('how to pay')) {
-        return "just click on scanner";
-      }
-      if (msg.includes('what is your work') || msg.includes('what can you do')) {
-        return "I can answer basic questions, help with support, or just chat!";
-      }
-      if (msg.includes('price') || msg.includes('cost')) {
-        return "Prices vary based on the service. What do you need help with?";
-      }
-      if (msg.includes('help') || msg.includes('support')) {
-        return "Sure! Tell me what you're stuck with.";
-      }
-      if (msg.includes('services')) {
-        return "We offer web design, digital payments, AI chat, and more.";
-      }
-      if (msg.includes('thank')) {
-        return "You're very welcome! 😊";
-      }
-      if (msg.includes('bye') || msg.includes('goodbye')) {
-        return "Goodbye! Come back anytime 👋";
-      }
-      if (msg.includes('who made you')) {
-        return "I was created by a developer using JavaScript!";
-      }
-
-      return "I'm still learning. Could you rephrase that?";
+    // Show typing indicator
+    function showTyping() {
+        const typingDiv = document.createElement('div');
+        typingDiv.className = 'message bot typing-indicator';
+        typingDiv.innerHTML = `
+            <span>Thinking</span>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+        `;
+        box.appendChild(typingDiv);
+        box.scrollTop = box.scrollHeight;
+        return typingDiv;
     }
 
-    toggleBtn.addEventListener('click', toggleChat);
-    closeBtn.addEventListener('click', toggleChat);
+    // Call chatbot API
+    async function getBotReply(msg) {
+        try {
+            // For demo purposes, we'll use a simulated API
+            // In a real implementation, you would call your actual API endpoint:
+            /*
+            const res = await fetch('https://your-api-endpoint.com/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: msg })
+            });
+            
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            const data = await res.json();
+            return data.reply?.trim() || 'Sorry, I didn’t get that.';
+            */
+            
+            // Simulated API response with payment-related answers
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            const paymentKeywords = ['payment', 'pay', 'transaction', 'fee', 'charge', 'refund', 'card', 'credit', 'debit', 'gateway'];
+            const integrationKeywords = ['integrate', 'api', 'sdk', 'documentation', 'code', 'implement'];
+            const securityKeywords = ['secure', 'security', 'pci', 'compliance', 'fraud'];
+            
+            if (msg.toLowerCase().includes('hello') || msg.toLowerCase().includes('hi')) {
+                return 'Hello! How can I assist you with Razpay today?';
+            }
+            else if (msg.toLowerCase().includes('fee') || msg.toLowerCase().includes('pricing')) {
+                return 'Our standard transaction fee is 2.9% + $0.30 per successful charge. Volume discounts are available for high-volume businesses.';
+            }
+            else if (paymentKeywords.some(kw => msg.toLowerCase().includes(kw))) {
+                const responses = [
+                    'Payments typically take 1-2 business days to settle in your bank account.',
+                    'We support all major credit cards: Visa, Mastercard, American Express, and Discover.',
+                    'You can issue refunds directly from your Razpay dashboard or via the API.',
+                    'Failed payments can occur due to insufficient funds, card expiration, or bank restrictions.'
+                ];
+                return responses[Math.floor(Math.random() * responses.length)];
+            }
+            else if (integrationKeywords.some(kw => msg.toLowerCase().includes(kw))) {
+                return 'You can integrate Razpay using our REST API or client libraries. Documentation is available at docs.razpay.com. We have SDKs for JavaScript, Python, Java, and PHP.';
+            }
+            else if (securityKeywords.some(kw => msg.toLowerCase().includes(kw))) {
+                return 'Razpay is PCI DSS Level 1 certified. We use end-to-end encryption, tokenization, and advanced fraud detection to secure your transactions.';
+            }
+            else if (msg.toLowerCase().includes('contact') || msg.toLowerCase().includes('support')) {
+                return 'You can reach our support team 24/7 at support@razpay.com or +1-800-555-1234.';
+            }
+            else {
+                const fallbackResponses = [
+                    'I can help with payment processing, integration, security, and billing questions.',
+                    'Could you clarify your question about Razpay?',
+                    'I specialize in payment processing. How can I assist you today?',
+                    'For more complex issues, our support team is available 24/7.'
+                ];
+                return fallbackResponses[Math.floor(Math.random() * fallbackResponses.length)];
+            }
+        } catch (e) {
+            console.error(e);
+            return '⚠️ Error contacting server. Please try again later.';
+        }
+    }
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const text = input.value.trim();
-      if (!text) return;
+    // Form submit = user sends message
+    form.onsubmit = async (e) => {
+        e.preventDefault();
+        const text = input.value.trim();
+        if (!text) return;
 
-      addMessage(text, 'you');
-      input.value = '';
-
-      setTimeout(() => {
-        const reply = getBotReply(text);
+        // Add user message
+        addMessage(text, 'you');
+        input.value = '';
+        sendBtn.disabled = true;
+        
+        // Show typing indicator
+        const typingIndicator = showTyping();
+        
+        // Get bot reply
+        const reply = await getBotReply(text);
+        
+        // Remove typing indicator
+        box.removeChild(typingIndicator);
+        
+        // Add bot reply
         addMessage(reply, 'bot');
-      }, 600);
+        sendBtn.disabled = false;
+    };
+
+    // Toggle button click
+    toggleBtn.onclick = toggleChat;
+    closeBtn.onclick = toggleChat;
+
+    // Close chat when clicking outside
+    document.addEventListener('click', (e) => {
+        if (popup.classList.contains('open') && 
+            !popup.contains(e.target) && 
+            e.target !== toggleBtn) {
+            toggleChat();
+        }
     });
 
-    // Initial greeting
+    // Initial greeting after a short delay
     setTimeout(() => {
-      addMessage("नमस्ते! I'm your assistant. Ask me anything in simple words 🤖", 'bot');
-    }, 800);
+        if (!popup.classList.contains('open')) {
+            addMessage('Welcome to Razpay support! Ask me about payments, integration, or security.', 'bot');
+        }
+    }, 2000);
